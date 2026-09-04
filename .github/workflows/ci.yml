@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run Unit Tests
+        run: PYTHONPATH=src python3 -m unittest discover -s tests -v
+      - name: Verify CRQ CLI
+        run: PYTHONPATH=src python3 -m opensearch_vciso.cli crq examples/finding-lsass-dump.json > /tmp/crq.json
+      - name: Verify SOC Yield CLI
+        run: PYTHONPATH=src python3 -m opensearch_vciso.cli soc-yield examples/soc-telemetry.json > /tmp/soc.json
+      - name: Verify Revenue Enablement CLI
+        run: PYTHONPATH=src python3 -m opensearch_vciso.cli revenue-enable examples/vendor-security-questionnaire.json > /tmp/rev.json
+      - name: Verify Threat Emulation CLI
+        run: PYTHONPATH=src python3 -m opensearch_vciso.cli emulate-threat examples/adversary-emulation-apt29.json > /tmp/emu.json
+      - name: Verify Board Memo Generation
+        run: PYTHONPATH=src python3 -m opensearch_vciso.cli board-memo > /tmp/memo.md
+      - name: Verify NIST OSCAL Export
+        run: PYTHONPATH=src python3 -m opensearch_vciso.cli export-oscal > /tmp/oscal.json
+      - name: Validate Output JSON Integrity
+        run: |
+          python3 -m json.tool /tmp/crq.json > /dev/null
+          python3 -m json.tool /tmp/soc.json > /dev/null
+          python3 -m json.tool /tmp/rev.json > /dev/null
+          python3 -m json.tool /tmp/emu.json > /dev/null
+          python3 -m json.tool /tmp/oscal.json > /dev/null

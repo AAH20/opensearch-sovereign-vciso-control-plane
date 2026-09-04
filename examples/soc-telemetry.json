@@ -1,0 +1,26 @@
+{
+  "period": "2026-Q3",
+  "tier_1_triage": {
+    "total_alerts": 1450,
+    "true_positives": 218,
+    "false_positives": 1232,
+    "avg_triage_duration_minutes": 2.8,
+    "escalated_alerts": 235,
+    "valid_escalations": 218,
+    "invariant_auto_gated_alerts": 520
+  },
+  "tier_2_incident_response": {
+    "incidents_investigated": 52,
+    "mttr_minutes": 21.4,
+    "reversible_lease_actions": 49,
+    "root_cause_accuracy": 0.98,
+    "outages_prevented": 11
+  },
+  "tier_3_engineering": {
+    "blindspots_discovered": 16,
+    "detection_rules_authored": 12,
+    "rule_true_positive_yield": 0.91,
+    "adversary_emulation_passes": 34,
+    "engineering_hours": 45.0
+  }
+}

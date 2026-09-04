@@ -1,0 +1,15 @@
+{
+  "finding_id": "FINDING-OPENSEARCH-SEC-9021",
+  "detector_id": "detector-lsass-memory-dump",
+  "rule_name": "Credential Dumping via LSASS Memory Extraction",
+  "severity": "CRITICAL",
+  "mitre_technique": "T1003.001",
+  "target_asset_id": "asset-stripe-billing-db",
+  "timestamp": "2026-09-04T04:15:22Z",
+  "raw_telemetry": {
+    "source_ip": "10.142.12.89",
+    "process_name": "rundll32.exe",
+    "command_line": "rundll32.exe C:\\windows\\System32\\comsvcs.dll, MiniDump 672 C:\\temp\\lsass.dmp full",
+    "user_identity": "NT AUTHORITY\\SYSTEM"
+  }
+}

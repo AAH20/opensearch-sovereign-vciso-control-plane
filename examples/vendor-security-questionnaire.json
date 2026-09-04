@@ -1,0 +1,30 @@
+{
+  "questionnaire_id": "PROCURE-FORTUNE50-2026-089",
+  "customer_name": "Tier 1 Global Banking Corporation",
+  "questions": [
+    {
+      "item_id": "Q-01",
+      "question": "Does the vendor enforce Multi-Factor Authentication (MFA) across all employee access to cloud systems?",
+      "category": "access_control",
+      "framework_mapping": ["SOC2-CC6.1", "ISO27001-A.9"]
+    },
+    {
+      "item_id": "Q-02",
+      "question": "Is all customer data encrypted in-transit using TLS 1.3 and at-rest using AES-256 with Customer-Managed Keys?",
+      "category": "encryption",
+      "framework_mapping": ["SOC2-CC6.7", "NIST-800-53-SC-8"]
+    },
+    {
+      "item_id": "Q-03",
+      "question": "What is the organization's verified Disaster Recovery Recovery Time Objective (RTO) and Recovery Point Objective (RPO) under EU DORA standards?",
+      "category": "business_continuity",
+      "framework_mapping": ["DORA-ART-9", "ISO27001-A.17"]
+    },
+    {
+      "item_id": "Q-04",
+      "question": "Are all production infrastructure mutations governed by dual-control authorization and immutable audit logging?",
+      "category": "change_management",
+      "framework_mapping": ["SOC2-CC8.1", "FedRAMP-High"]
+    }
+  ]
+}

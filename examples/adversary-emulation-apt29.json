@@ -1,0 +1,54 @@
+{
+  "scenario_id": "SCENARIO-APT29-ENTERPRISE-INTRUSION",
+  "adversary_profile": "APT29 / Midnight Blizzard",
+  "techniques": [
+    {
+      "technique_id": "T1078.004",
+      "name": "Valid Accounts: Cloud Accounts Stolen Token",
+      "tactic": "Defense Evasion",
+      "expected_detector_id": "detector-iam-stolen-keys",
+      "simulated_latency_ms": 110.5,
+      "synthetic_payload": {
+        "event_type": "AwsApiCall",
+        "user_agent": "aws-sdk-go/v1.38",
+        "api_call": "AssumeRoleWithWebIdentity"
+      }
+    },
+    {
+      "technique_id": "T1003.001",
+      "name": "OS Credential Dumping: LSASS Memory",
+      "tactic": "Credential Access",
+      "expected_detector_id": "detector-lsass-memory-dump",
+      "simulated_latency_ms": 85.2,
+      "synthetic_payload": {
+        "event_type": "ProcessAccess",
+        "target_image": "C:\\Windows\\System32\\lsass.exe",
+        "granted_access": "0x1010"
+      }
+    },
+    {
+      "technique_id": "T1021.002",
+      "name": "Remote Services: SMB/Windows Admin Shares",
+      "tactic": "Lateral Movement",
+      "expected_detector_id": "detector-smb-lateral-movement",
+      "simulated_latency_ms": 94.0,
+      "synthetic_payload": {
+        "event_type": "NetworkConnection",
+        "destination_port": 445,
+        "protocol": "SMB"
+      }
+    },
+    {
+      "technique_id": "T1486",
+      "name": "Data Encrypted for Impact (Ransomware)",
+      "tactic": "Impact",
+      "expected_detector_id": "detector-ransomware-mass-encryption",
+      "simulated_latency_ms": 145.0,
+      "synthetic_payload": {
+        "event_type": "FileRenamed",
+        "extension": ".locked",
+        "entropy": 7.98
+      }
+    }
+  ]
+}
