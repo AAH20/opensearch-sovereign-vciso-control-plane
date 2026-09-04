@@ -11,7 +11,7 @@
 An enterprise-grade autonomous control plane that transforms **OpenSearch Security Analytics** into a **Board-Level Cyber Risk Quantification (CRQ) and Revenue-Enablement Fabric**.
 
 Instead of treating security as a passive cost center, this platform:
-1. Translates technical telemetry alerts into dollar-denominated loss exposure (**FAIR Model: SLE, ARO, ALE, $\text{VaR}_{95\%}$**).
+1. Translates technical telemetry alerts into dollar-denominated loss exposure (**FAIR Model: SLE, ARO, ALE, $\text{VaR}_{95}$**).
 2. Automates enterprise customer vendor security questionnaires via live OpenSearch evidence (**slashing sales procurement latency from 45 days to 48 hours**).
 3. Enforces operational unit economics across **SOC Analyst Tiers (L1 Triage, L2 Incident Response, L3 Detection Engineering)**.
 4. Continuously validates detector coverage against **Empirical Adversary Threat Emulation (MITRE ATT&CK / Atomic Red Team)**.
@@ -24,7 +24,7 @@ Instead of treating security as a passive cost center, this platform:
 ```text
 ┌──────────────────────────────────────────────────────────────────────────────────┐
 │                   1. CYBER RISK QUANTIFICATION (CRQ / FAIR MODEL)                │
-│ - Translates OpenSearch alert findings into Dollar-at-Risk ($ ALE, VaR, SLE).    │
+│ - Translates OpenSearch alert findings into Dollar-at-Risk (USD ALE, VaR, SLE).  │
 │ - Financial exposure calculation: Loss Event Frequency x Loss Magnitude.        │
 └────────────────────────────────────────┬─────────────────────────────────────────┘
                                          ▼
@@ -64,11 +64,11 @@ Instead of treating security as a passive cost center, this platform:
 ### 1. Cyber Risk Quantification (FAIR Model)
 Correlates OpenSearch Security Analytics alert findings with enterprise asset valuation to calculate:
 - **Single Loss Expectancy (SLE)**:
-  $$\text{SLE} = \text{Asset Valuation (USD)} \times \text{Exposure Factor (EF)}$$
+  $$\text{SLE} = \text{Asset Valuation} \times \text{Exposure Factor}$$
 - **Annualized Loss Expectancy (ALE)**:
-  $$\text{ALE} = \text{Annual Rate of Occurrence (ARO)} \times \text{SLE}$$
-- **Value at Risk ($\text{VaR}_{95\%}$)**:
-  $$\text{VaR}_{95\%} = \min\left(\text{Asset Value}, \text{SLE} \times 1.645 \times \sqrt{\text{ARO}}\right)$$
+  $$\text{ALE} = \text{ARO} \times \text{SLE}$$
+- **Value at Risk ($\text{VaR}_{95}$)**:
+  $$\text{VaR}_{95} = \min(\text{Asset Value}, \text{SLE} \times 1.645 \times \sqrt{\text{ARO}})$$
 - **Remediation Economic ROI Ratio**:
   $$\text{ROI} = \frac{\text{ALE}}{\text{Mitigation Cost}}$$
 
@@ -131,10 +131,11 @@ PYTHONPATH=src python3 -m unittest discover -s tests -v
 
 Import the pre-built visual suite into OpenSearch Dashboards (`Management -> Saved Objects -> Import`):
 - [`dashboards/sovereign-vciso-command-center.ndjson`](dashboards/sovereign-vciso-command-center.ndjson)
-  - *Panel 1: FAIR Value at Risk ($) by Asset Tier*
+  - *Panel 1: FAIR Value at Risk (USD) by Asset Tier*
   - *Panel 2: SOC Tier Yield: Triage Velocity vs Cost per True Positive*
-  - *Panel 3: GRC Revenue Enablement: Unblocked Enterprise Pipeline ($)*
+  - *Panel 3: GRC Revenue Enablement: Unblocked Enterprise Pipeline (USD)*
   - *Panel 4: Continuous Threat Emulation Efficacy (MITRE ATT&CK)*
+
 
 ---
 

@@ -52,13 +52,13 @@ We propose enriching the OpenSearch finding index mapping (`.opensearch-sap-find
 
 ## 3. Core Mathematical Implementation
 1. **Single Loss Expectancy (SLE)**:
-   $$\text{SLE} = \text{Asset Valuation} \times \text{Exposure Factor (EF)}$$
+   $$\text{SLE} = \text{Asset Valuation} \times \text{Exposure Factor}$$
    Where $\text{Exposure Factor}$ is derived from the cross-product of `Asset Criticality Tier` and detector `Severity`.
 
 2. **Annualized Loss Expectancy (ALE)**:
-   $$\text{ALE} = \text{Annual Rate of Occurrence (ARO)} \times \text{SLE}$$
+   $$\text{ALE} = \text{ARO} \times \text{SLE}$$
 
-3. **Value at Risk ($\text{VaR}_{95\%}$)**:
+3. **Value at Risk ($\text{VaR}_{95}$)**:
    Bounds the tail 95th-percentile financial exposure across correlated security incidents.
 
 4. **Remediation Economic ROI Ratio**:

@@ -43,7 +43,7 @@ class BoardMemoGenerator:
 Over the preceding operational quarter, the enterprise utilized the **OpenSearch Sovereign Security Control Plane** to continuously quantify cyber risk, automate compliance verification, and enforce high-yield Security Operations Center (SOC) unit economics.
 
 **Core Findings**:
-1. **Financial Risk Exposure (FAIR Model)**: Enterprise Value at Risk ($\text{{VaR}}_{{95\\%}}$) stands at **${total_var:,.2f}**, with an Annualized Loss Expectancy ($\text{{ALE}}$) of **${total_ale:,.2f}/year**.
+1. **Financial Risk Exposure (FAIR Model)**: Enterprise Value at Risk ($\text{{VaR}}_{{95}}$) stands at **${total_var:,.2f}**, with an Annualized Loss Expectancy ($\text{{ALE}}$) of **${total_ale:,.2f}/year**.
 2. **Revenue Enablement**: Automated GRC questionnaire resolution unblocked **${unblocked_deals:,.2f}** in enterprise sales pipeline, reducing customer procurement vetting latency from **45 days to 48 hours**.
 3. **Operational SOC Yield**: True operational cost per validated true-positive incident is controlled at **${cost_per_tp:,.2f}**, maintaining an L1 triage velocity of **< 3.5 minutes/alert** and an L2 MTTR of **{mttr:.1f} minutes**.
 4. **Adversary Verification**: Empirical threat emulation (APT29 / Ransomware vectors) demonstrated an active **{efficacy:.1f}% detection efficacy** across production sensor meshes.
