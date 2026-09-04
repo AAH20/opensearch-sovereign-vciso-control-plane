@@ -19,6 +19,12 @@ class TestBoardMemo(unittest.TestCase):
         self.assertIn("$10,000,000.00", memo)
         self.assertIn("Test Enterprise Corp", memo)
         self.assertIn("150.0x Loss Avoidance", memo)
+        self.assertIn("DATA CLASSIFICATION: SYNTHETIC", memo)
+
+    def test_rejects_unknown_data_classification(self) -> None:
+        generator = BoardMemoGenerator()
+        with self.assertRaises(ValueError):
+            generator.generate_memo({}, {}, {}, {}, data_classification="production-ish")
 
 
 if __name__ == "__main__":

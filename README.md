@@ -1,5 +1,10 @@
 # OpenSearch Sovereign vCISO & Cyber Risk Quantification Control Plane
 
+> **Maturity notice:** This repository is a reference implementation using
+> synthetic fixtures. Financial exposure, questionnaire acceleration, pipeline,
+> SOC, and detection figures are demonstration outputs—not measured production
+> outcomes. See [PRODUCTION_READINESS.md](PRODUCTION_READINESS.md).
+
 **OpenSearch · Security Analytics · vCISO · Cyber Risk Quantification (CRQ) · FAIR Model · Agentic GRC · Revenue Enablement · SOC Tier Yield · L1/L2/L3 SecOps KPIs · Adversary Threat Emulation · MITRE ATT&CK · NIST 800-53 · EU DORA · SOC2 Type II · ISO 27001 · NIST OSCAL**
 
 [![CI](https://github.com/AAH20/opensearch-sovereign-vciso-control-plane/actions/workflows/ci.yml/badge.svg)](https://github.com/AAH20/opensearch-sovereign-vciso-control-plane/actions/workflows/ci.yml)

@@ -14,7 +14,13 @@ class BoardMemoGenerator:
         soc_summary: dict[str, Any],
         emulation_summary: dict[str, Any],
         organization_name: str = "A2Z Enterprise Global Defense",
+        data_classification: str = "synthetic",
     ) -> str:
+        allowed_classifications = {
+            "observed", "correlated", "estimated", "synthetic", "insufficient_evidence"
+        }
+        if data_classification not in allowed_classifications:
+            raise ValueError(f"Unsupported data classification: {data_classification}")
         date_str = datetime.now(timezone.utc).strftime("%B %d, %Y")
         total_var = crq_summary.get("total_value_at_risk_usd", 4_375_000.0)
         total_ale = crq_summary.get("total_ale_usd", 218_750.0)
@@ -36,6 +42,11 @@ class BoardMemoGenerator:
 **DATE**: {date_str}  
 **ORGANIZATION**: {organization_name}  
 **SUBJECT**: Cyber Risk Quantification (FAIR), Revenue Enablement, and SecOps Yield Report  
+
+> **DATA CLASSIFICATION: {data_classification.upper()}** — Financial, commercial,
+> operational, and detection values must be interpreted according to this
+> provenance label. `SYNTHETIC` values are demonstration data, not production
+> outcomes.
 
 ---
 
